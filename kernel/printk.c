@@ -2095,7 +2095,7 @@ void console_unlock(void)
 	static u64 seen_seq;
 	unsigned long flags;
 	bool wake_klogd = false;
-<<<<<<< HEAD
+
 	bool retry;
     bool should_break = false;
     int this_cpu;
@@ -2108,10 +2108,10 @@ void console_unlock(void)
     preempt_disable();
 	this_cpu = smp_processor_id();
     preempt_enable();
-=======
+
 	bool do_cond_resched, retry;
 
->>>>>>> v3.10.104
+
 	if (console_suspended) {
 		up(&console_sem);
 		return;
@@ -2224,14 +2224,14 @@ skip:
         call_console_drivers(level, text, len);
 #endif
 		local_irq_restore(flags);
-<<<<<<< HEAD
+
         if (this_cpu == 0)
             should_break = true;
-=======
+
 
 		if (do_cond_resched)
 			cond_resched();
->>>>>>> v3.10.104
+
 	}
 	console_locked = 0;
 	mutex_release(&console_lock_dep_map, 1, _RET_IP_);
