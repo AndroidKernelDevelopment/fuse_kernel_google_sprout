@@ -23,19 +23,19 @@ yellow='\033[0;33m'
 red='\033[0;31m'
 nocol='\033[0m'
 # Modify the following variable if you want to build
-export CROSS_COMPILE="/home/varunchitre15/linaro-5.2/bin/arm-eabi-"
+export CROSS_COMPILE="/home/samar/losn/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-"
 export ARCH=arm
 export SUBARCH=arm
-export KBUILD_BUILD_USER="varun.chitre15"
-export KBUILD_BUILD_HOST="EroticBox"
+export KBUILD_BUILD_USER="SamarV-121"
+export KBUILD_BUILD_HOST="SpeedHorn"
 
 compile_kernel ()
 {
 echo -e "$blue***********************************************"
-echo "          Compiling ThunderZap kernel          "
+echo "          Compiling kernel          "
 echo -e "***********************************************$nocol"
-make cyanogenmod_sprout_defconfig
-make -j12
+make fuse_sprout_defconfig
+make -j8
 if ! [ -a $ZIMAGE ];
 then
 echo -e "$red Kernel Compilation failed! Fix the errors! $nocol"
