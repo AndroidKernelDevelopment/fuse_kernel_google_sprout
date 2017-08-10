@@ -433,7 +433,7 @@ static void tty_set_termios_ldisc(struct tty_struct *tty, int num)
 
 	up_write(&tty->termios_rwsem);
 
-	mutex_unlock(&tty->termios_mutex);
+
 
 	tty->disc_data = NULL;
 	tty->receive_room = 0;

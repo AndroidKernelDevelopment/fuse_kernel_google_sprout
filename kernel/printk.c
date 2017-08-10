@@ -2109,7 +2109,7 @@ void console_unlock(void)
 	this_cpu = smp_processor_id();
     preempt_enable();
 
-	bool do_cond_resched, retry;
+
 
 
 	if (console_suspended) {
@@ -2127,7 +2127,7 @@ void console_unlock(void)
 	 * softlockup warnings which exacerbate the issue with more
 	 * messages practically incapacitating the system.
 	 */
-	do_cond_resched = console_may_schedule;
+
 	console_may_schedule = 0;
 
 	/* flush buffered message fragment immediately to console */
@@ -2229,8 +2229,8 @@ skip:
             should_break = true;
 
 
-		if (do_cond_resched)
-			cond_resched();
+
+
 
 	}
 	console_locked = 0;
